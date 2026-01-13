@@ -22,6 +22,18 @@ It runs on multiple machines (nodes) connected together → called a cluster
 
  3. Fault tolerant (if one machine fails, others continue)
 
+Spark can run on one machine, but its architecture is distributed by design.
+
+### What happens in local mode
+
+ 1. One machine
+
+ 2. One JVM
+
+ 3. Multiple threads instead of multiple machines
+
+ 4. Data is still split into partitions
+
 ## IN-MEMORY = Faster execution by keeping data in RAM
 Spark processes data in RAM (memory) instead of repeatedly reading from disk.
 
@@ -41,3 +53,20 @@ Spark is built to perform computations on data.
 5. Machine Learning
 
 6. Streaming analytics
+
+## ENGINE = The brain that plans, optimizes, and executes
+Spark is not just a library, it is a full processing engine.
+
+### Engine responsibilities
+
+ 1. Breaks your code into jobs
+
+ 2. Splits jobs into stages
+
+ 3. Divides stages into tasks
+
+ 4. Assigns tasks to executors
+
+ 5. Manages memory & CPU
+
+ 6. Handles failures
